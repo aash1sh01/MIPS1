@@ -10,3 +10,5 @@ main:
 	syscall
 	la $s1, reply							#Loading reply's address as a base address to add and change characters, like first and second.
 	addi $s4, $s1, 10 						#Using 10 to $s4 to signify end of loop.
+Assign:	lb $a0, 0($s1)							
+	j Checker							#Load each character, with load byte and incerementing $s1 by 1 so that we jump to next character next, finally jmping to filter to check if the input is valid.
