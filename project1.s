@@ -13,5 +13,7 @@ main:
 Assign:	lb $a0, 0($s1)							
 	j Checker							#Load each character, with load byte and incerementing $s1 by 1 so that we jump to next character next, finally jmping to filter to check if the input is valid.
 Last:	beq $s4, $s1, End 						#Checking if 10 characters are done or not, if done, go to end of loop.
-	addi $s1, 1
-	j Assign							#increment address of reply by 1 until we've reached the end of the string
+	addi $s1, 1							#increment address of reply by 1 until we've reached the end of the string
+	j Assign					
+Checker:li $t1, 48							#checks if the values are valid and in range for our base.
+	li $t2, 57							#in our base characters 0 to 9 are valid, so the upper limit for the numeric characters is 57 which is 9, and the lower limit is 48 which means 0.
