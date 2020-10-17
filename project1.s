@@ -17,3 +17,7 @@ Last:	beq $s4, $s1, End 						#Checking if 10 characters are done or not, if don
 	j Assign					
 Checker:li $t1, 48							#checks if the values are valid and in range for our base.
 	li $t2, 57							#in our base characters 0 to 9 are valid, so the upper limit for the numeric characters is 57 which is 9, and the lower limit is 48 which means 0.
+	li $t3, 64							#My Howard Id is 02986124, 02986124 mod 11= 9, and 26+9= 35, so base is 35 and the last valid ucase character is 'Y', hence $t4=89 , last valid lcase = 'y', hence $t6=121  
+	li $t4, 89
+	li $t5, 97
+	li $t6, 121							#loading different values to registers to compare ASCII characters and filter if they are valid and also if the character is a number, lowercase or uppercase
