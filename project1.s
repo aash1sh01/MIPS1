@@ -23,4 +23,10 @@ Checker:li $t1, 48							#checks if the values are valid and in range for our ba
 	li $t6, 121							#loading different values to registers to compare ASCII characters and filter if they are valid and also if the character is a number, lowercase or uppercase
 	blt $a0, $t1, Invalid											
 	bgt $a0, $t6, Invalid 						#checking whether the values are beyond the range or not, if yes we will jump to invalid, if no we will jump to isValid
-	blt $a0, $t6, isvalid						
+	blt $a0, $t6, isvalid	
+isvalid:bgt $a0, $t5, Lcase						#checking if characters are valid in our base system and categorizing them into individual branches by comparing stored ascii values.
+	bgt $a0, $t2, Invalid
+	bgt $a0, $t3, Ucase
+	bgt $a0, $t4, Invalid
+	bgt $a0, $t1, integer
+					
