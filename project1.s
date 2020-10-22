@@ -33,4 +33,8 @@ integer:li $s2, -48							#Case 1: when character is integer
 	add $s3, $a0, $s2						#if character is a numeric character
 	add $s0, $s0, $s3						#storing the sum in $s0 after each character so that we can have the total value
 	j Last								#We jump to last to check whether we reached the end of loop or not.
+Lcase:	li $s2, -87							#Case 2: when the character is lowercase
+	add $s3, $a0, $s2						
+	add $s0, $s0, $s3						#substracting in the cases so that the refrence value is set for valid cases as the base is 10, 97-10=87
+	j Last
 					
