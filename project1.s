@@ -29,4 +29,8 @@ isvalid:bgt $a0, $t5, Lcase						#checking if characters are valid in our base s
 	bgt $a0, $t3, Ucase
 	bgt $a0, $t4, Invalid
 	bgt $a0, $t1, integer
+integer:li $s2, -48							#Case 1: when character is integer
+	add $s3, $a0, $s2						#if character is a numeric character
+	add $s0, $s0, $s3						#storing the sum in $s0 after each character so that we can have the total value
+	j Last								#We jump to last to check whether we reached the end of loop or not.
 					
