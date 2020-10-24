@@ -46,4 +46,6 @@ Invalid:add $s0, $s0, $zero
 End:	li $v0, 1
 	add $a0, $s0, $zero						#print the sum value stored in $s0 across all three cases
 	syscall	
+	li $v0, 10							#end once the output is printed
+	syscall
 					
