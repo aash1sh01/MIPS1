@@ -41,4 +41,9 @@ Ucase:	li $s2, -55							#Case 3: when the character is uppercase
 	add $s3, $a0, $s2						
 	add $s0, $s0, $s3
 	j Last
+Invalid:add $s0, $s0, $zero
+	j Last								#if invalid, we add zero to the total value then go to next character
+End:	li $v0, 1
+	add $a0, $s0, $zero						#print the sum value stored in $s0 across all three cases
+	syscall	
 					
