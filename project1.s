@@ -37,4 +37,8 @@ Lcase:	li $s2, -87							#Case 2: when the character is lowercase
 	add $s3, $a0, $s2						
 	add $s0, $s0, $s3						#substracting in the cases so that the refrence value is set for valid cases as the base is 10, 97-10=87
 	j Last
+Ucase:	li $s2, -55							#Case 3: when the character is uppercase						
+	add $s3, $a0, $s2						
+	add $s0, $s0, $s3
+	j Last
 					
